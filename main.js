@@ -1,7 +1,3 @@
-
-
-
-
 //task 2
 function multi(num1, num2){
     var array = [[]];
@@ -19,7 +15,26 @@ function multi(num1, num2){
 }
 
 var array1 = multi(10, 10);
+console.log('Task 2');
 console.table(array1);
+
+//task 3.(a)
+function shape(type, perimete){
+    this.getType = type;
+    this.getPerimeter = perimeter(...perimete);
+}
+function perimeter(...edge){
+    var sum = 0;
+    for(var i = 0; i < edge.length; i++){
+        sum += edge[i];
+    }
+    return sum;
+}
+var edges = [1, 2, 3];
+var Triangle = new shape('Triangle', edges);
+
+console.log('Task 3.a and b');
+console.log(Triangle.getType, Triangle.getPerimeter);
 
 //task 3.(d)
 function shuffle(array) {
@@ -40,6 +55,7 @@ function shuffle(array) {
     return array;
 }
 
-var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-shuffle(array);
-console.log(array);
+var arrayTask3d = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+shuffle(arrayTask3d);
+console.log('Task 3.d');
+console.log(arrayTask3d);
