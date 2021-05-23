@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 $(function (){
 
-    console.log(categories); // this would represent categories by name
+    console.log('categories', categories); // this would represent categories by name
     $("#search").autocomplete({source: categories}); // for now it's only searchable by input, but it's autocomplete and will suggest every category on typing
 
 })
@@ -30,7 +30,7 @@ $(function (){
 
 $(document).on('keypress', function(e) {
     if(e.which === 13) {
-        var input = $('#search').val();
+        var input = $('#search').val(); // autocompleted search value
 
         const request_two = {
             "url": "https://gorest.co.in/public-api/categories",
@@ -39,15 +39,14 @@ $(document).on('keypress', function(e) {
 
         $.ajax(request_two).done(function (response) {
 
-            var show = false;
-
             for (var i = 0; i < response.data.length; i++) {
 
-                if (input === response.data[i].name) {
-                    show = true;
-                }
-                if (show) {
+                let current_category = response.data[i].name;
+
+                if (input === response.data[i].name || input.toUpperCase() === response.data[i].name.toUpperCase()) { // finding id for products
                     /*element.style.display = "";*/
+
+                    //getting product list
 
                     const request_three = {
                         "url": "https://gorest.co.in/public-api/products?categories[]=" + response.data[i].id,
@@ -56,20 +55,16 @@ $(document).on('keypress', function(e) {
 
                     $.ajax(request_three).done(function (response_1) {
 
-                        console.log(response_1.data);
+                        console.log(current_category, response_1.data);
 
                         /*for (var i = 0; i < response_1.data.length; i++) {
                             categories.push(response_1.data[i].name);
                         }*/
 
                     });
-
-
-
-                    show = false;
                 } else {
                     /*element.style.display = "none";*/
-                    console.log('none');
+                    /*console.log('mismatch of the category');*/
                 }
             }
 
