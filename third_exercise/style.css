@@ -1,0 +1,49 @@
+.container{
+    width: 800px;
+    height: 600px;
+    border: 1px solid gray;
+    display: grid;
+    grid-template-rows: 100px 250px 250px;
+
+}
+
+.top{
+    justify-self: center;
+    border-bottom: 1px solid yellow;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid{
+    justify-self: center;
+    border-bottom: 1px solid yellow;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid textarea{
+
+}
+
+.bot{
+    justify-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bot textarea{
+
+}
+
+textarea{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    resize: none;
+}
