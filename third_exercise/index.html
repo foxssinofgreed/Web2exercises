@@ -14,12 +14,18 @@
     <div class="container">
         <div class="top">
             <span id="timer"></span>
+            <button onclick="start();">Start</button>
+            <button onclick="finishGame();">End</button>
+            <span>Correct</span>
+            <span class="correct">0</span>
+            <span>To type</span>
+            <span class="errors">0</span>
         </div>
         <div class="mid">
             <textarea placeholder="" disabled="yes" ></textarea>
         </div>
         <div class="bot">
-            <textarea placeholder="type here to start" oninput=""></textarea>
+            <textarea placeholder="type here to start" oninput="processCurrentText();" onfocus="start();"></textarea>
         </div>
     </div>
 
