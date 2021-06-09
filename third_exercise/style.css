@@ -55,8 +55,31 @@ textarea{
 
 .errors {
     color: red;
+    font-weight: bold;
 }
 
 .correct {
     color: darkgreen;
+    font-weight: bold;
+}
+
+.results{
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+}
+
+.total{
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.last_total{
+    color: darkorchid;
+    font-weight: bold;
+}
+
+#timer{
+    color: darkcyan;
+    font-weight: bold;
 }
