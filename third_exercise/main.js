@@ -20,10 +20,8 @@ timer_txt.textContent = timeLeft + "s";
 let best_score = 0;
 
 if (getCookie('best_score') === null && getCookie('last_total') === null){
-    total.textContent = 0;
-    last_total.textContent = 0;
-}
-else{
+    document.cookie = 'last_total' + 0 + ';';
+    document.cookie = 'best_score' + 0 + ';';
     total.textContent = getCookie('best_score');
     last_total.textContent = getCookie('last_total');
 }
@@ -72,7 +70,6 @@ function processCurrentText() {
 
     // display the number of errors
     error_txt.textContent = total_errors + errors;
-    console.log(errors);
 
     // update accuracy text
     correct_txt.textContent = total_correct + correct_chars;
