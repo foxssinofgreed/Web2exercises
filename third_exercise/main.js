@@ -20,8 +20,8 @@ timer_txt.textContent = timeLeft + "s";
 let best_score = 0;
 
 if (getCookie('best_score') === null && getCookie('last_total') === null){
-    document.cookie = 'last_total' + 0 + ';';
-    document.cookie = 'best_score' + 0 + ';';
+    document.cookie = 'last_total=' + 0 + ';';
+    document.cookie = 'best_score=' + 0 + ';';
     total.textContent = getCookie('best_score');
     last_total.textContent = getCookie('last_total');
 }
