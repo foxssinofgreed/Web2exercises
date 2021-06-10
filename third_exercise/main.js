@@ -1,6 +1,8 @@
 let timer_txt = $('#timer')[0];
 let mid_txt = $('.mid textarea');
 let bot_txt = $('.bot textarea')[0];
+let bot_txt_area = $('.bot');
+let mid_txt_area = $('.mid');
 let error_txt = $('.errors')[0];
 let correct_txt = $('.correct')[0];
 let current_txt = $('.mid textarea')[0];
@@ -72,6 +74,18 @@ function processCurrentText() {
         }
     });
 
+    if (curr_input_array[curr_input_array.length - 1] === curr_txt_arr[curr_input_array.length - 1]){
+        bot_txt_area.addClass('border_correction');
+        bot_txt_area.removeClass('border_error');
+        mid_txt_area.addClass('border_correction');
+        mid_txt_area.removeClass('border_error');
+    } else {
+        bot_txt_area.addClass('border_error');
+        bot_txt_area.removeClass('border_correction');
+        mid_txt_area.addClass('border_error');
+        mid_txt_area.removeClass('border_correction');
+    }
+
     // display the number of errors
     error_txt.textContent = total_errors + errors;
 
@@ -117,6 +131,10 @@ function resetValues(){
     $('.bot textarea').val('');
     last_total.textContent = getCookie('last_total');
     total.textContent = getCookie('best_score');
+    bot_txt_area.removeClass('border_error');
+    mid_txt_area.removeClass('border_error');
+    bot_txt_area.removeClass('border_correction');
+    mid_txt_area.removeClass('border_correction');
 }
 
 function getCookie(name) {

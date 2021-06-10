@@ -14,7 +14,7 @@ body{
 
 .top{
     justify-self: center;
-    border-bottom: 1px solid yellow;
+    border-bottom: 2px solid darkmagenta;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -23,7 +23,7 @@ body{
 
 .mid{
     justify-self: center;
-    border-bottom: 1px solid yellow;
+    border-bottom: 2px solid darkmagenta !important;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -46,11 +46,18 @@ body{
 
 }
 
+textarea:focus{
+    border: none;
+}
+
 textarea{
     width: 100%;
     height: 100%;
     font-size: 16px;
     resize: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
 .errors {
@@ -82,4 +89,16 @@ textarea{
 #timer{
     color: darkcyan;
     font-weight: bold;
+}
+
+.border_correction{
+    border: 3px solid green;
+    border-bottom: none;
+    border-top: none;
+}
+
+.border_error{
+    border: 3px solid red;
+    border-bottom: none;
+    border-top: none;
 }
